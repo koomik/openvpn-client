@@ -109,5 +109,5 @@ elif [[ $# -ge 1 ]]; then
 else
     [[ -e /vpn/vpn.conf ]] || { echo "ERROR: VPN not configured!"; sleep 120; }
     [[ -e /vpn/vpn-ca.crt ]] || { echo "ERROR: VPN cert missing!"; sleep 120; }
-    exec openvpn --config /vpn/config.ovpn
+    exec openvpn --config /vpn/config.ovpn --log /vpn/openvpn.log
 fi
